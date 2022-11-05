@@ -1,5 +1,5 @@
 # mypythbank
-Simulación de sistema de banco desarrollada en Django por José Rojas
+Simulación de aplicación web de banco desarrollada en Django por José Rojas
 
 Para el test de la aplicación se establecieron por defecto dos cuentas en la base de datos. Para registrarse en la aplicación, ingrese alguna de las cuentas o cree una nueva directamente en la base de datos.
 
