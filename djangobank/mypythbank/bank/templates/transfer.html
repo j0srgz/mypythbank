@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Transferencia</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/transfer/" method="POST">
+                    {% csrf_token %}
+                    <p><div class="form-group">
+                        Cuenta seleccionada:
+                        <input type="text" name="ctaemisora" value='{{cuenta.nrocuenta}}' class="form-control" placeholder="{{cuenta.nrocuenta}}">
+                    </div></p>
+                    <div class="form-group">
+                        <input type="text" name="ctareceptora" placeholder='Número de Cta. Receptora' class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="monto" placeholder='Monto a depositar' class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-block">Confirmar</button>
+                    </div>
+                    <div class="form-group">
+                        <a href="/" class="btn btn-danger btn-block">Atrás</a>
+                    </div>
+                    </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

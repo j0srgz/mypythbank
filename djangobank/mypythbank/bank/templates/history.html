@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if success %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{success}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+{% if failure %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{failure}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card text-justify">
+                <div class="card-header">
+                    <center><h3>HISTORIAL DE OPERACIONES</h3></center>
+                </div>
+                <div class="card-body">
+                    {% for ref in ref %}
+                    <div><p><b>REFERENCIA:</b> <a href="/references/{{ref.id}}">{{ref.ref}}</a>&nbsp; &nbsp; &nbsp; <b>MONTO:</b> {{ref.monto}} $</p></div>
+                    {% endfor %}
+                    <center>
+                    <div class="form-group">
+                        <a href="/main" class="btn btn-success btn-block">Inicio</a>
+        
+                        <a href="/history" class="btn btn-danger btn-block">Atrás</a></center>
+                    </div>
+                    </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
